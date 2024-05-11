@@ -1,4 +1,5 @@
 ## Diamond Price Prediction Using Machine Learning
+![alt text](1_ymcJr7642AWR-2-8jmeNuQ.jpg)
 ### Overview
 This project aims to predict diamond prices using machine learning techniques. The dataset used for this project contains various attributes of diamonds such as carat weight, cut, color, clarity, etc., along with their corresponding prices. By training a machine learning model on this dataset, we can predict the price of a diamond given its characteristics.
 
