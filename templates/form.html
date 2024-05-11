@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diamond Price Prediction Form</title>
+    <link rel="stylesheet" href="styles.css">
+
+<style>
+    .btn{
+        text-align: center;
+    }
+
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        
+    }
+    
+    header {
+        background-color: #333;
+        color: #fff;
+        padding: 20px;
+        text-align: center;
+    }
+    
+    main {
+        padding: 20px;
+    }
+    
+    .form-group {
+        margin-bottom: 20px;
+    }
+    
+    label {
+        display: block;
+        font-weight: bold;
+    }
+    
+    input[type="number"],
+    select {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 16px;
+    }
+    
+    button[type="submit"] {
+        background-color: #333;
+        color: #fff;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+    
+    }
+    
+    button[type="submit"]:hover {
+        background-color: #555;
+    }
+    
+    footer {
+        background-color: #333;
+        color: #fff;
+        text-align: center;
+        padding: 10px 0;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+    }
+    
+</style>
+
+</head>
+<body>
+    <header>
+        <h1>Diamond Price Prediction</h1>
+        <p>Enter the details to predict the price of your diamond</p>
+    </header>
+    <main>
+        <form action="{{url_for('predict_datapoint')}}" method="POST">
+            <div class="form-group">
+                <label for="carat">Carat Weight:</label>
+                <input type="number" id="carat" name="carat" placeholder="Enter carat value (float)" required>
+            </div>
+
+            <div class="form-group">
+                <label for="depth">Depth:</label>
+                <input type="text" id="depth" name="depth" placeholder="Enter depth value (float)">
+            </div>
+
+
+            <div class="form-group">  
+                <label for="table">Table:</label>
+                <input type="text" id="table" name="table" placeholder="Enter table value (float)">
+            </div>
+
+
+            <div class="form-group">
+                <label for="x">x:</label>
+                <input type="text" id="x" name="x" placeholder="Enter x value (float)">
+            
+            </div>
+        
+            <div class="form-group">
+                <label for="y">y:</label>
+                <input type="text" id="y" name="y" placeholder="Enter y value (float)">
+            </div>
+        
+            <div class="form-group">
+                <label for="z">z:</label>
+                <input type="text" id="z" name="z" placeholder="Enter z value (float)">
+            </div>
+
+
+
+            <div class="form-group">
+                <label for="cut">Cut Quality:</label>
+                <select id="cut" name="cut" required>
+                    <option value="">Select Cut Quality</option>
+                    <option value="Fair">Fair</option>
+                    <option value="Good">Good</option>
+                    <option value="Very Good">Very Good</option>
+                    <option value="Premium">Premium</option>
+                    <option value="Ideal">Ideal</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="color">Color Grade:</label>
+                <select id="color" name="color" required>
+                    <option value="">Select Color Grade</option>
+                    <option value="D">D</option>
+                    <option value="E">E</option>
+                    <option value="F">F</option>
+                    <option value="G">G</option>
+                    <option value="H">H</option>
+                    <option value="I">I</option>
+                    <option value="J">J</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="clarity">Clarity Grade:</label>
+                <select id="clarity" name="clarity" required>
+                    <option value="">Select Clarity Grade</option>
+                    <option value="I1">I1</option>
+                    <option value="SI2">SI2</option>
+                    <option value="SI1">SI1</option>
+                    <option value="VS2">VS2</option>
+                    <option value="VS1">VS1</option>
+                    <option value="VVS2">VVS2</option>
+                    <option value="VVS1">VVS1</option>
+                    <option value="IF">IF</option>
+                </select>
+            </div>
+            <div class ="btn">
+
+                <button type="submit" class="btn">Predict Price</button>
+                
+            </div>
+            <div class="btn">
+                <br>
+                Diamond Price: {{final_result}}
+            </div>
+        </form>
+    </main>
+    
+</body>
+</html>
